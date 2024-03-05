@@ -10,5 +10,7 @@ namespace BookShoppingCartMvc.Models
         [Required]
         public string UserId { get; set; }
         public bool IsDeleted { get; set; } = false;
+        
+        public ICollection<CartDetail> CartDetails { get; set; }
     }
 }

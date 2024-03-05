@@ -8,7 +8,7 @@ namespace BookShoppingCartMvc.Models
     {
         public int Id { get; set; }
         [Required]
-        public int ShoppingCart_Id { get; set; }
+        public int ShoppingCartId { get; set; }
         [Required]
         public int BookId { get; set; }
         [Required]
