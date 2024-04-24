@@ -27,7 +27,7 @@ namespace BookShoppingCartMvc.Repositories
                     throw new Exception("user is not logged-in");
                 }
                 var cart = await GetCart(userId);
-                if (cart == null)
+                if (cart is null)
                 {
                     cart = new ShoppingCart
                     {
@@ -41,7 +41,7 @@ namespace BookShoppingCartMvc.Repositories
                     (x => x.ShoppingCartId==cart.Id && x.BookId==bookId);
                 if (cartItem is not null)
                 {
-                    cartItem.Quantity += quantity;
+                    cartItem.Quantity = cartItem.Quantity + 1;
                 }
                 else
                 {
@@ -92,7 +92,7 @@ namespace BookShoppingCartMvc.Repositories
                 }
                 else
                 {
-                    cartItem.Quantity -= 1;
+                    cartItem.Quantity = cartItem.Quantity - 1;
                 }
                 _db.SaveChanges();
             }

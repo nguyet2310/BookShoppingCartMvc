@@ -9,6 +9,7 @@ namespace BookShoppingCartMvc.Models.DTOs
         public string? Name { get; set; }
         [Required]
         [EmailAddress]
+        [MaxLength(30)]
         public string? Email { get; set; }
         [Required]
         public string? MobileNumber { get; set; }
@@ -16,7 +17,6 @@ namespace BookShoppingCartMvc.Models.DTOs
         [MaxLength(200)]
         public string? Address { get; set; }
         [Required]
-        [MaxLength(30)]
         public string? PaymentMethod { get; set; }
     }
 }

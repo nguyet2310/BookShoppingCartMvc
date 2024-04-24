@@ -37,7 +37,7 @@ namespace BookShoppingCartMvc.Controllers
         public async Task<IActionResult> GetTotalItemInCart()
         {
             int cartItem = await _cartRepo.GetCartItemCount();
-            return View(cartItem);
+            return Ok(cartItem);
         }
 
         public IActionResult Checkout()

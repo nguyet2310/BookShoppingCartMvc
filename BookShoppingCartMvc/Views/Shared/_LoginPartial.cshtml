@@ -12,12 +12,12 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-            Hello <span id="username">@User.Identity?.Name</span>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!
             @if (User.IsInRole("Admin"))
             {
                 <span>(Admin)</span>
             }
+            </a>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
@@ -41,7 +41,7 @@
     <script>
         async function add(bookId) {
              var usernameEl = document.getElementById("username");
-        if(usernameEl==null){
+        if(usernameEl!=null){
             window.location.href = "/Identity/Account/Login";
           //var username=usernameEl.innerText;
           //  if(username.length<1){
@@ -59,6 +59,9 @@
             }
             catch (err) {
                 console.log(err);
+            }
+            finally {
+                loadCartCount(); // Gọi lại hàm loadCartCount() sau khi thêm sản phẩm vào giỏ hàng
             }
         }
     </script>

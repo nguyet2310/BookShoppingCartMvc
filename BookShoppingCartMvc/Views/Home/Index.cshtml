@@ -35,7 +35,6 @@
     @foreach (var book in Model.Books)
     {
         <div class="card mx-3 mb-4" style="width: 11rem;">
-            @*<img src="https://picsum.photos/200/300" class="card-img-top" alt="...">*@
 
             @if (string.IsNullOrEmpty(book.Image))
             {
@@ -63,25 +62,29 @@
     <script>
         async function add(bookId) {
             var usernameEl = document.getElementById("username");
-            if (usernameEl == null) {
+            if (usernameEl != null) {
                 window.location.href = "/Identity/Account/Login";
                 //var username=usernameEl.innerText;
                 //  if(username.length<1){
                 //      window.location.href="/Identity/Account/Login";
                 //  }
             }
-            try {
+            try 
+            {
                 var response = await fetch(`/Cart/AddItem?bookId=${bookId}`);
-                if (response.status == 200) {
+                if (response.status == 200) 
+                {
                     var result = await response.json();
                     var cartCountEl = document.getElementById("cartCount");
                     cartCountEl.innerHTML = result;
                     window.location.href = "#cartCount";
                 }
             }
-            catch (err) {
+            catch (err) 
+            {
                 console.log(err);
             }
         }
     </script>
 }
+
