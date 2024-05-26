@@ -22,14 +22,15 @@
                 <tr>
                     <td>@item.Book.BookName</td>
                     <td>
-                        @if(!string.IsNullOrEmpty(item.Book.Image))
+                        @if(string.IsNullOrEmpty(item.Book.Image))
                         {
-                            <img src="~/images/NoImage.png" style="width:80px;height:100px">
+                            <img src="/Images/NoImage.png" style="width:80px;height:100px" alt="book image" />
                         }
                         else
                         {
-                            <img src="~/images/@item.Book.Image" style="width:80px;height:100px">
+                            <img src="/images/@item.Book.Image" style="width:80px;height:100px" alt="book image" />
                         }
+                        
                     </td>
                     <td>@item.Book.Genre.GenreName</td>
                     <td>@item.Book.Price X @item.Quantity</td>
