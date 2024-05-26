@@ -30,6 +30,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/AdminOperations/AllOrders">Orders</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Stock">Stock</a>
+                        </li>
                     }
                     
                     @*<li class="nav-item dropdown">
@@ -53,6 +56,11 @@
         </div>
     </nav>
     <div class="container">
+
+        <div class="my-2">
+            <partial name="_Notifications" />
+        </div>
+
         @RenderBody()
     </div>
 </body>
