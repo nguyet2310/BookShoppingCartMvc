@@ -9,10 +9,10 @@ namespace BookShoppingCartMvc.Models
         public int Id { get; set; }
         [Required]
         public string UserId { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime CreateDate { get; set; } = DateTime.UtcNow;
         [Required]
         public int OrderStatusId { get; set; }
-        public bool IsDelete { get; set; } = false;
+        public bool IsDeleted { get; set; } = false;
         [Required]
         [MaxLength(30)]
         public string? Name { get; set; }

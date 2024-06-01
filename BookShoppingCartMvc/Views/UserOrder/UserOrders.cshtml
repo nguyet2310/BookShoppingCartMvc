@@ -19,7 +19,7 @@
             @foreach(var order in Model)
             {
                 <tr>
-                    <th>@order.CreatedDate.ToString("dd-MM-yyyy")</th>
+                    <th>@order.CreateDate.ToString("dd-MM-yyyy")</th>
                     <th>@order.OrderStatus.StatusName</th>
                 </tr>
                 @if (order.OrderDetail != null && order.OrderDetail.Count > 0)

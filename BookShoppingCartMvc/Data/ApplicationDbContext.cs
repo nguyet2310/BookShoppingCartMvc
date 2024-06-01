@@ -19,5 +19,12 @@ namespace BookShoppingCartMvc.Data
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<Stock> Stocks { get; set; }
+        public DbSet<TopNSoldBookModel> TopNSoldBookModels { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);  // Gọi base trước
+            modelBuilder.Entity<TopNSoldBookModel>().HasNoKey();
+        }
     }
 }

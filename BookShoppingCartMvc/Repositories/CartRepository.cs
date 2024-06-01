@@ -176,7 +176,7 @@ namespace BookShoppingCartMvc.Repositories
                 var order = new Order
                 {
                     UserId = userId,
-                    CreatedDate = DateTime.UtcNow,
+                    CreateDate = DateTime.UtcNow,
                     Name = model.Name,
                     Email = model.Email,
                     MobileNumber = model.MobileNumber,
